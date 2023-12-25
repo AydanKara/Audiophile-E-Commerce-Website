@@ -8,6 +8,7 @@ api.set("view engine", "ejs");
 api.set("views", path.join(__dirname, "views"));
 
 api.use(express.static("public"))
+api.use(express.static("assets"))
 api.use(authRoutes);
 
 api.listen(3000);

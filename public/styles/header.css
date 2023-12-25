@@ -1,0 +1,35 @@
+header {
+    width: 100%;
+    background-color: var(--color-black);
+}
+
+#header-wrapper {
+    height: 9.7rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #fff;
+}
+
+#logo {
+    margin: 0;
+    padding: 0;
+}
+
+#nav-list {
+    display: flex;
+    gap: 3.4rem;
+}
+
+.nav-item {
+    color: var(--color-white);
+    font-size: 1.3rem;
+    font-weight: 700;
+    line-height: 2.5rem;
+    letter-spacing: .2rem;
+}
+
+#cart .bx {
+    color: var(--color-white);
+    font-size: 2rem;
+}

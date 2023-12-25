@@ -23,9 +23,12 @@ html {
 body {
     background-color: var(--color-background);
     color: var(--color-black);
-    font-size: 1.5rem;
-    font-weight: 500;
-    line-height: 2.5rem;
+}
+
+main {
+    width: 100%;
+    max-width: 111rem;
+    margin: 0 auto;
 }
 
 h1,
@@ -99,4 +102,10 @@ ol {
 
 a {
     text-decoration: none;
+    
+}
+
+.container {
+    max-width: 111rem;
+    margin: 0 auto;
 }
