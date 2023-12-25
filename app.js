@@ -10,6 +10,7 @@ api.set("views", path.join(__dirname, "views"));
 
 api.use(express.static("public"));
 api.use(express.static("assets"));
+api.use(express.urlencoded({ extended: false }));
 api.use(authRoutes);
 
 db.connectToDatabase()
