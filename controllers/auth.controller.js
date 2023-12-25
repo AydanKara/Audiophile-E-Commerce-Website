@@ -2,6 +2,10 @@ function getSignup(req, res) {
   res.render("customer/auth/signup");
 }
 
+function signup(req, res) {
+
+}
+
 function getLogin(req, res) {
   res.render("customer/auth/login");
 }
@@ -11,7 +15,8 @@ function getHome(req, res) {
 }
 
 module.exports = {
-  getSignup: getSignup,
-  getLogin: getLogin,
-  getHome: getHome,
+  getSignup,
+  getLogin,
+  getHome,
+  signup
 };
