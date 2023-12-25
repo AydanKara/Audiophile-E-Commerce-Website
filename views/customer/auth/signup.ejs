@@ -6,31 +6,49 @@
     <body>
         <%- include("../includes/header") %>
             <main>
-                <h1>Create new Account</h1>
+                <div id="new-account">
+                    <h1>Create new Account</h1>
+                </div>
                 <form action="" method="">
-                    <label for="email">E-Mail</label>
-                    <input type="email" name="email" id="email" required>
+                    <p>
+                        <label for="email">E-Mail</label>
+                        <input type="email" name="email" id="email" required>
+                    </p>
 
-                    <label for="confirm-email">Confirm E-Mail</label>
-                    <input type="email" name="confirm-email" id="confirm-email" required>
+                    <p>
+                        <label for="confirm-email">Confirm E-Mail</label>
+                        <input type="email" name="confirm-email" id="confirm-email" required>
+                    </p>
 
-                    <label for="password">Password</label>
-                    <input type="password" name="password" id="password" minlength="6" required>
+                    <p>
+                        <label for="password">Password</label>
+                        <input type="password" name="password" id="password" minlength="6" required>
+                    </p>
+
                     <hr>
-                    <label for="fullname">Full Name</label>
-                    <input type="text" name="fullname" id="fullname" required>
 
-                    <label for="street">Street</label>
-                    <input type="text" name="street" id="street" required>
+                    <p>
+                        <label for="fullname">Full Name</label>
+                        <input type="text" name="fullname" id="fullname" required>
+                    </p>
 
-                    <label for="postal">Postal Code</label>
-                    <input type="text" name="postal" id="postal" required>
+                    <p>
+                        <label for="street">Street</label>
+                        <input type="text" name="street" id="street" required>
+                    </p>
 
-                    <label for="city">City</label>
-                    <input type="text" name="city" id="city" required>
+                    <p>
+                        <label for="postal">Postal Code</label>
+                        <input type="text" name="postal" id="postal" required>
+                    </p>
 
-                    <button class="btn">Create Account</button>
-                    <p id="switch-form"><a href="/login">Login instead</a></p>
+                    <p>
+                        <label for="city">City</label>
+                        <input type="text" name="city" id="city" required>
+                    </p>
+
+                    <button class="btn-1">Create Account</button>
+                    <p class="btn-2"><a href="/login">Login instead</a><img src="shared/desktop/icon-arrow-right.svg" alt="icon-arrow-right"></p>
                 </form>
             </main>
             <%- include("../includes/footer") %>

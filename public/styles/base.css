@@ -27,8 +27,6 @@ body {
 
 main {
     width: 100%;
-    max-width: 111rem;
-    margin: 0 auto;
 }
 
 h1,
@@ -40,7 +38,6 @@ h6 {
     color: var(--color-black);
     font-weight: 700;
     text-transform: uppercase;
-
 }
 
 h1 {
@@ -102,10 +99,38 @@ ol {
 
 a {
     text-decoration: none;
-    
+
 }
 
 .container {
     max-width: 111rem;
     margin: 0 auto;
 }
+
+.btn-1, .btn-2 {
+    border: none;
+    cursor: pointer;
+    transition: .3s ease-in-out background-color;
+    font-size: 1.3rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+.btn-1 {
+    padding: 1.5rem 3rem;
+    color: var(--color-white);
+    background-color: var(--color-orange);
+}
+
+.btn-1:hover,
+.btn-1:active {
+    background-color: var(--color-orange-hover);
+}
+
+.btn-2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.3rem;
+}
+
