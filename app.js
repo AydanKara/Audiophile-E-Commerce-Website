@@ -8,6 +8,8 @@ const db = require("./data/database");
 const addCsrfTokenMiddleware = require("./middlewares/csrf-token");
 const errorHandlerMiddleware = require("./middlewares/error-handler");
 const authRoutes = require("./routes/auth.routes");
+const productsRoutes = require("./routes/products.routes");
+const baseRoutes = require("./routes/base.routes");
 
 const api = express();
 
@@ -23,7 +25,11 @@ api.use(expressSession(sessionConfig));
 api.use(csrf());
 
 api.use(addCsrfTokenMiddleware);
+
+api.use(baseRoutes);
 api.use(authRoutes);
+api.use(productsRoutes);
+
 api.use(errorHandlerMiddleware);
 
 db.connectToDatabase()
