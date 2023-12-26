@@ -1,11 +1,14 @@
 const mongodb = require("mongodb");
+const { username, password } = require("../encode");
 
 const MongoClient = mongodb.MongoClient;
 
 let database;
 
 async function connectToDatabase() {
-  const client = await MongoClient.connect("mongodb://0.0.0.0:27017");
+  const client = await MongoClient.connect(
+    `mongodb+srv://${username}:${password}@$cluster0.vhewwbq.mongodb.net/`
+  );
   database = client.db("audiophile-shop");
 }
 
