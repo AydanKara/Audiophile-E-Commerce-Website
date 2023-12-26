@@ -6,7 +6,7 @@ let database;
 
 async function connectToDatabase() {
   const client = await MongoClient.connect(
-    `mongodb+srv://aydankaramehmed:WVhgmJTSXXeBEHRy@cluster0.vhewwbq.mongodb.net/`
+    `mongodb+srv://aydankaramehmed:WVhgmJTSXXeBEHRy@cluster0.vhewwbq.mongodb.net/audiophile-shop`
   );
   database = client.db("audiophile-shop");
 }
