@@ -1,12 +1,11 @@
 const expressSession = require('express-session');
 const mongoDbStore = require("connect-mongodb-session");
-const { username, password } = require('../encode');
 
 function createSessionStore() {
   const MongoDbStore = mongoDbStore(expressSession);
 
   const store = new MongoDbStore({
-    uri: `mongodb+srv://${username}:${password}@$cluster0.vhewwbq.mongodb.net/`,
+    uri: `mongodb+srv://aydankaramehmed:WVhgmJTSXXeBEHRy@cluster0.vhewwbq.mongodb.net/`,
     databaseName: "audiophile-shop",
     collection: "sessions",
   });
