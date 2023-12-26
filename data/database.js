@@ -1,5 +1,4 @@
 const mongodb = require("mongodb");
-const { username, password } = require("../encode");
 
 const MongoClient = mongodb.MongoClient;
 
