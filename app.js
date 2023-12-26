@@ -1,9 +1,13 @@
 const express = require("express");
 const path = require("path");
+const csrf = require("csurf");
+
+const db = require("./data/database");
+const addCsrfTokenMiddleware = require("./middlewares/csrf-token");
+const errorHandlerMiddleware = require("./middlewares/error-handler");
+const authRoutes = require("./routes/auth.routes");
 
 const api = express();
-const db = require("./data/database");
-const authRoutes = require("./routes/auth.routes");
 
 api.set("view engine", "ejs");
 api.set("views", path.join(__dirname, "views"));
@@ -11,7 +15,10 @@ api.set("views", path.join(__dirname, "views"));
 api.use(express.static("public"));
 api.use(express.static("assets"));
 api.use(express.urlencoded({ extended: false }));
+api.use(csrf());
+api.use(addCsrfTokenMiddleware);
 api.use(authRoutes);
+api.use(errorHandlerMiddleware);
 
 db.connectToDatabase()
   .then(function () {
