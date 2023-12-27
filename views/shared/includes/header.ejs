@@ -9,7 +9,12 @@
                     <li class="nav-item">SPEAKERS</li>
                     <li class="nav-item">EARPHONES</li>
                     <% if (locals.isAuth) { %>
-                        <li class="nav-item">LOGOUT</li>
+                        <li class="nav-item">
+                            <form action="/logout" method="POST">
+                                <input type="hidden" name="_csrf" value="<%= locals.csrfToken %>">
+                                <button>LOGOUT</button>
+                            </form>
+                        </li>
                         <% } %>
                 </ul>
             </nav>
