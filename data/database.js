@@ -5,9 +5,7 @@ const MongoClient = mongodb.MongoClient;
 let database;
 
 async function connectToDatabase() {
-  const client = await MongoClient.connect(
-    `mongodb://0.0.0.0:27017/audiophile-shop`
-  );
+  const client = await MongoClient.connect(process.env.MONGO_URL);
   database = client.db("audiophile-shop");
 }
 
