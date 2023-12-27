@@ -56,4 +56,5 @@ module.exports = {
   getLogin,
   getHome,
   signup,
+  login,
 };
