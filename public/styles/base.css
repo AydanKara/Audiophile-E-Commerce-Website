@@ -99,7 +99,13 @@ ol {
 
 a {
     text-decoration: none;
+}
 
+p {
+    color: var(--color-black);
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 2.5rem;
 }
 
 .container {
@@ -107,7 +113,8 @@ a {
     margin: 0 auto;
 }
 
-.btn-1, .btn-2 {
+.btn-1,
+.btn-2 {
     border: none;
     cursor: pointer;
     transition: .3s ease-in-out background-color;
@@ -116,10 +123,17 @@ a {
     letter-spacing: 1px;
     text-transform: uppercase;
 }
+
 .btn-1 {
     padding: 1.5rem 3rem;
     color: var(--color-white);
     background-color: var(--color-orange);
+}
+
+button {
+    padding: 0;
+    margin: 0;
+    font-family: inherit;
 }
 
 .btn-1:hover,
@@ -133,4 +147,3 @@ a {
     justify-content: center;
     gap: 1.3rem;
 }
-

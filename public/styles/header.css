@@ -28,6 +28,14 @@ nav {
     font-weight: 700;
     line-height: 2.5rem;
     letter-spacing: .2rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: .3s ease-in-out color;
+}
+
+.nav-item:hover {
+    color: var(--color-orange);
 }
 
 #cart .bx {
