@@ -15,6 +15,7 @@ html {
     --color-white: #ffffff;
     --color-gray-300: #F1F1F1;
     --color-background: #fafafa;
+    --color-background-error: #da9999;
     --color-form-error: #CD2C2C;
 
     --border-radius-8: 8px;
@@ -146,4 +147,22 @@ button {
     align-items: center;
     justify-content: center;
     gap: 1.3rem;
+}
+
+.alert {
+    width: fit-content;
+    border-radius: var(--border-radius-8);
+    background-color: var(--color-background-error);
+    margin: 5rem auto 0 auto;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+}
+
+.alert h2 {
+    color: var(--color-form-error);
+}
+
+.alert p {
+    color: var(--color-form-error);
 }
