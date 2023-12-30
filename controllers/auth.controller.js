@@ -139,10 +139,6 @@ async function login(req, res, next) {
   });
 }
 
-function getHome(req, res) {
-  res.render("customer/home/home");
-}
-
 function logout(req, res) {
   authUtil.destroyUserAuthSession(req);
   res.redirect("/");
@@ -151,7 +147,6 @@ function logout(req, res) {
 module.exports = {
   getSignup,
   getLogin,
-  getHome,
   signup,
   login,
   logout,

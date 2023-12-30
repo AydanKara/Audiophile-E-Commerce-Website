@@ -4,7 +4,7 @@ const express = require("express");
 const router = express.Router();
 
 router.get("/", function (req, res) {
-  res.redirect("/products");
+    res.render("customer/home/home");
 });
 
 module.exports = router;

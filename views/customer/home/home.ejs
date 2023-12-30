@@ -1,9 +1,19 @@
-<%- include("../includes/head", { pageTitle: "Home Page" }) %>
-    </head>
+<%- include("../../shared/includes/head", { pageTitle: "Home Page" }) %>
+<link rel="stylesheet" href="/styles/home.css">
+</head>
 
-    <body>
-        <%- include("../includes/header") %>
-            <main>
-                <h1>Home Page</h1>
-            </main>
-            <%- include("../includes/footer") %>
+<body>
+  <%- include("../../shared/includes/header") %>
+  <main>
+    <section id="hero">
+      <div class="container">
+        <div id="hero-wrapper">
+          <p id="hero-overline" class="overline">New product</p>
+          <h1 id="hero-heading">XX99 Mark II Headphones</h1>
+          <p id="hero-desc">Experience natural, lifelike audio and exceptional build quality made for the passionate music enthusiast.</p>
+          <button class="btn-1">See product</button>
+        </div>
+      </div>
+    </section>
+  </main>
+  <%- include("../../shared/includes/footer") %>
