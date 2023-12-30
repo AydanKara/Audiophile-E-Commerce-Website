@@ -1,36 +1,36 @@
 <%- include("../../shared/includes/head", { pageTitle: "Login" }) %>
-    <link rel="stylesheet" href="/styles/form.css">
-    <link rel="stylesheet" href="/styles/auth.css">
-    </head>
+<link rel="stylesheet" href="/styles/form.css">
+<link rel="stylesheet" href="/styles/auth.css">
+</head>
 
-    <body>
-        <%- include("../../shared/includes/header") %>
-            <main>
-                <div id="new-account">
-                    <h1>Login</h1>
-                </div>
-                <% if (inputData.errorMessage) { %>
-                    <div class="alert">
-                        <h2>Invalid Credentials</h2>
-                        <p>
-                            <%= inputData.errorMessage %>
-                        </p>
-                    </div>
-                    <% } %>
-                <form action="/login" method="POST">
-                    <input type="hidden" name="_csrf" value="<%= locals.csrfToken %>">
-                    <p>
-                        <label for="email">E-Mail</label>
-                        <input type="email" name="email" id="email" value="<%= inputData.email %>" required>
-                    </p>
+<body>
+  <%- include("../../shared/includes/header") %>
+  <main>
+    <div id="new-account">
+      <h1>Login</h1>
+    </div>
+    <% if (inputData.errorMessage) { %>
+    <div class="alert">
+      <h2>Invalid Credentials</h2>
+      <p>
+        <%= inputData.errorMessage %>
+      </p>
+    </div>
+    <% } %>
+    <form action="/login" method="POST">
+      <input type="hidden" name="_csrf" value="<%= locals.csrfToken %>">
+      <p>
+        <label for="email">E-Mail</label>
+        <input type="email" name="email" id="email" value="<%= inputData.email %>" required>
+      </p>
 
-                    <p>
-                        <label for="password">Password</label>
-                        <input type="password" name="password" id="password" value="<%= inputData.password %>" required>
-                    </p>
+      <p>
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password" value="<%= inputData.password %>" required>
+      </p>
 
-                    <button class="btn-1">Login</button>
-                    <p class="btn-2"><a href="/signup">Create a new user</a><img src="shared/desktop/icon-arrow-right.svg" alt="icon-arrow-right"></p>
-                </form>
-            </main>
-            <%- include("../../shared/includes/footer") %>
+      <button class="btn-1">Login</button>
+      <p class="btn-2"><a href="/signup">Create a new user</a><img src="shared/desktop/icon-arrow-right.svg" alt="icon-arrow-right"></p>
+    </form>
+  </main>
+  <%- include("../../shared/includes/footer") %>
