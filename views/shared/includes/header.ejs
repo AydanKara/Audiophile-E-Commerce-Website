@@ -1,45 +1,24 @@
 <header>
-    <div class="container">
-        <div id="header-wrapper">
-            <a id="logo" href="/"><img src="shared/desktop/logo.svg" alt=""></a>
-            <nav>
-                <ul id="nav-list">
-                    <% if (!locals.isAdmin) { %>
-                        <li class="nav-item"><a href="/">HOME</a></li>
-                        <li class="nav-item"><a href="/products/headphones">HEADPHONES</a></li>
-                        <li class="nav-item"><a href="/products/speakers">SPEAKERS</a></li>
-                        <li class="nav-item"><a href="/products/earphones">EARPHONES</a></li>
-                        <% } %>
-
-                            <% if (locals.isAuth && !locals.isAdmin) { %>
-                                <li class="nav-item"><a href="/orders">Orders</a></li>
-                                <% } %>
-
-                                    <% if (locals.isAdmin) { %>
-                                        <li class="nav-item"><a href="admin/products">Manage Products</a></li>
-                                        <li class="nav-item"><a href="admin/orders">Manage Orders</a></li>
-                                        <% } %>
-
-
-                                            <% if (!locals.isAuth) { %>
-                                                <li class="nav-item"><a href="/signup">Signup</a></li>
-                                                <li class="nav-item"><a href="/login">Login</a></li>
-
-                                                <% } %>
-                                                    <% if (locals.isAuth) { %>
-                                                        <li class="nav-item">
-                                                            <form action="/logout" method="POST">
-                                                                <input type="hidden" name="_csrf"
-                                                                    value="<%= locals.csrfToken %>">
-                                                                <button class="nav-item">LOGOUT</button>
-                                                            </form>
-                                                        </li>
-                                                        <% } %>
-                </ul>
-            </nav>
-            <% if (!locals.isAdmin) { %>
-                <a href="/cart/shoping-cart" id="cart"><img src="shared/desktop/icon-cart.svg" alt="cart icon"></a>
-                <% } %>
-        </div>
+  <div class="container">
+    <div id="header-wrapper">
+      <button id="mobile-menu-btn">
+        <img src="/shared/tablet/icon-hamburger.svg" alt="hamburger icon">
+      </button>
+      <a id="logo" href="/"><img src="shared/desktop/logo.svg" alt="website logo" /></a>
+      <nav><%- include("nav-items") %></nav>
+      <div id="user-nav-wrapper">
+        <i class='bx bxs-user'></i>
+        <nav id="user-nav">
+          <ul id="user-nav-list">
+            <%- include("user-items") %>
+          </ul>
+        </nav>
+      </div>
+      <% if (!locals.isAdmin) { %><a href="/cart/shoping-cart" id="cart"><img src="shared/desktop/icon-cart.svg" alt="cart icon" /></a>
+      <% } %>
     </div>
+  </div>
 </header>
+<aside id="mobile-menu">
+  <nav><%- include("nav-items") %></nav>
+</aside>

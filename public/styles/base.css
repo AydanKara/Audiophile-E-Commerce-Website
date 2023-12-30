@@ -138,6 +138,9 @@ button {
     padding: 0;
     margin: 0;
     font-family: inherit;
+    background: none;
+    border: none;
+    cursor: pointer;
 }
 
 .btn-1:hover,
@@ -168,4 +171,18 @@ button {
 
 .alert p {
     color: var(--color-form-error);
+}
+
+@media (max-width: 1280px) {
+    .container {
+        max-width: 86%;
+    }
+}
+
+@media (max-width: 1024px) {
+    
+}
+
+@media (max-width: 768px) {
+    
 }
