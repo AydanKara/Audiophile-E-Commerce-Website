@@ -1,0 +1,38 @@
+form {
+    margin: 5rem auto;
+}
+
+form p {
+    margin: 1.4rem 0;
+}
+
+input {
+    padding: 1.8rem 0 1.8rem 2.4rem;
+    margin-bottom: 2.4rem;
+    border: 1px solid #CFCFCF;
+    border-radius: var(--border-radius-8);
+}
+
+label {
+    padding: 0 1rem;
+    color: var(--color-black);
+    font-size: 1.8rem;
+    font-weight: 700;
+    letter-spacing: -0.214px;
+    margin-bottom: 1rem;
+}
+
+span {
+    margin-right: 1.5rem;
+}
+
+form #form-features {
+    display: flex;
+    
+}
+
+textarea {
+    width: 30rem;
+    border: 1px solid #CFCFCF;
+    border-radius: var(--border-radius-8);
+}

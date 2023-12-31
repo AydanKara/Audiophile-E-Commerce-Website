@@ -1,0 +1,58 @@
+<%- include("../../shared/includes/head", { pageTitle: "Add new product" }) %>
+<link rel="stylesheet" href="/styles/add-product-form.css">
+</head>
+
+<body>
+  <%- include("../../shared/includes/header") %>
+  <main>
+    <div class="container">
+      <h3>Add new Product</h3>
+      <form action="/admin/products?_csrf=<%= locals.csrfToken %>" method="POST" enctype="multipart/form-data">
+          <p>
+            <label for="title">Title</label>
+            <input type="text" id="title" name="title" required>
+          </p>
+          <p>
+            <label for="inage">Image</label>
+            <input type="file" id="image" name="image" accept="image/png,image/jpg">
+          </p>
+          <p>
+            <label for="category-select">Choose a Category:</label>
+            <select name="category" id="category-select">
+              <option value="">--Please choose an option--</option>
+              <option value="headphones">Headphones</option>
+              <option value="speakers">Speakers</option>
+              <option value="earphones">Earphones</option>
+            </select>
+
+            <label for="categoryImage">Category Image</label>
+            <input type="file" id="categoryImage" name="categoryImage" accept="image/png,image/jpg">
+          </p>
+          <p>
+          <span>New Product?</span>
+          <input type="radio" id="yes" name="new" value="yes" checked>
+          <label for="yes">Yes</label>
+          <input type="radio" id="no" name="new" value="no">
+          <label for="no">No</label>
+          </p>
+          <p>
+            <label for="price">Price</label>
+            <input type="number" id="price" name="price" min="0.01" step="0.01" required>
+          </p>
+          <p>
+            <label for="description">Description</label>
+            <input type="text" id="description" name="description" maxlength="250" required>
+          </p>
+          <p id="form-features">
+            <label for="features">Features</label>
+            <textarea id="features" name="features" rows="11" required></textarea>
+          </p>
+          <p>
+            <button type="reset" class="btn-1 btn-reset">Reset</button>
+            <button class="btn-1">Submit</button>
+          </p>
+      </form>
+    </div>
+
+  </main>
+  <%- include("../../shared/includes/footer") %></form>
