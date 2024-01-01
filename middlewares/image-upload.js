@@ -11,8 +11,9 @@ const upload = multer({
 });
 
 const configuredMulterMiddleware = upload.fields([
-  { name: "image", maxCount: 1 },
-  { name: "categoryImage", maxCount: 1 },
-]);
+    { name: "image", maxCount: 1 },
+    { name: "categoryImage", maxCount: 1 },
+  ]);
 
 module.exports = configuredMulterMiddleware;
+

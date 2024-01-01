@@ -11,10 +11,9 @@ function getNewProducts(req, res) {
 async function createNewProduct(req, res, next) {
   const product = new Product({
     ...req.body,
-    image: req.files.image.filename,
-    categoryImage: req.files.categoryImage.filename,
+    image: req.files.image[0].filename,
+    categoryImage: req.files.categoryImage[0].filename,
   });
-
   try {
     await product.save();
   } catch (error) {
