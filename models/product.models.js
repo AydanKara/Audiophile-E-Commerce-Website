@@ -1,6 +1,70 @@
 const db = require("../data/database");
 
-class Product {
+async function findCategoryHeadphones() {
+  const options = {
+    projection: {
+      _id: 1,
+      category: 1,
+      image: 1,
+      new: 1,
+      name: 1,
+      description: 1,
+    },
+  };
+  const products = await db
+    .getDb()
+    .collection("products")
+    .find({ category: "headphones" }, options)
+    .sort({ new: -1 })
+    .toArray();
+  return products;
+}
+
+async function findCategoryEarphones() {
+  const options = {
+    projection: {
+      _id: 1,
+      category: 1,
+      image: 1,
+      new: 1,
+      name: 1,
+      description: 1,
+    },
+  };
+  const products = await db
+    .getDb()
+    .collection("products")
+    .find({ category: "earphones" }, options)
+    .toArray();
+  return products;
+}
+
+async function findCategorySpeakers() {
+  const options = {
+    projection: {
+      _id: 1,
+      category: 1,
+      image: 1,
+      new: 1,
+      name: 1,
+      description: 1,
+    },
+  };
+  const products = await db
+    .getDb()
+    .collection("products")
+    .find({ category: "speakers" }, options)
+    .toArray();
+  return products;
+}
+
+module.exports = {
+  findCategoryEarphones,
+  findCategoryHeadphones,
+  findCategorySpeakers,
+};
+
+/* class Product {
   constructor(productData) {
     this.title = productData.title;
     this.image = productData.image;
@@ -29,6 +93,6 @@ class Product {
     };
     await db.getDb().collection("products").insertOne(productData);
   }
-}
+} */
 
-module.exports = Product;
+/* module.exports = Product; */

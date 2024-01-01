@@ -1,7 +1,18 @@
 const Product = require("../models/product.models");
+const {
+  findCategoryEarphones,
+  findCategoryHeadphones,
+  findCategorySpeakers,
+} = require("../models/product.models");
 
-function getProducts(req, res) {
-  res.render("admin/products/all-products");
+async function getProducts(req, res, next) {
+  try {
+    const products = await findCategoryHeadphones();
+    res.render("admin/products/all-products", { products: products });
+  } catch (error) {
+    next(error);
+    return;
+  }
 }
 
 function getNewProducts(req, res) {

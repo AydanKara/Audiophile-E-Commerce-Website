@@ -1,0 +1,41 @@
+const {
+  findCategoryEarphones,
+  findCategoryHeadphones,
+  findCategorySpeakers,
+} = require("../models/product.models");
+
+async function getCategoryHeadphones(req, res, next) {
+  try {
+    const products = await findCategoryHeadphones();
+    res.render("customer/products/headphones", { products: products });
+  } catch (error) {
+    next(error);
+    return;
+  }
+}
+
+async function getCategorySpeakers(req, res, next) {
+  try {
+    const products = await findCategorySpeakers();
+    res.render("customer/products/speakers", { products: products });
+  } catch (error) {
+    next(error);
+    return;
+  }
+}
+
+async function getCategoryEarphones(req, res, next) {
+  try {
+    const products = await findCategoryEarphones();
+    res.render("user/products/earphones", { products: products });
+  } catch (error) {
+    next(error);
+    return;
+  }
+}
+
+module.exports = {
+  getCategoryEarphones,
+  getCategoryHeadphones,
+  getCategorySpeakers,
+};
