@@ -35,6 +35,7 @@ async function findCategoryEarphones() {
     .getDb()
     .collection("products")
     .find({ category: "earphones" }, options)
+    .sort({ new: -1 })
     .toArray();
   return products;
 }
@@ -54,6 +55,7 @@ async function findCategorySpeakers() {
     .getDb()
     .collection("products")
     .find({ category: "speakers" }, options)
+    .sort({ new: -1 })
     .toArray();
   return products;
 }

@@ -27,7 +27,7 @@ async function getCategorySpeakers(req, res, next) {
 async function getCategoryEarphones(req, res, next) {
   try {
     const products = await findCategoryEarphones();
-    res.render("user/products/earphones", { products: products });
+    res.render("customer/products/earphones", { products: products });
   } catch (error) {
     next(error);
     return;

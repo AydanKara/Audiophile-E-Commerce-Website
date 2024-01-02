@@ -6,5 +6,6 @@ const router = express.Router();
 
 
 router.get("/products/headphones", customerController.getCategoryHeadphones);
-
+router.get("/products/earphones", customerController.getCategoryEarphones);
+router.get("/products/speakers", customerController.getCategorySpeakers);
 module.exports = router;

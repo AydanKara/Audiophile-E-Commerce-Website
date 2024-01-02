@@ -1,0 +1,46 @@
+<%- include("../../shared/includes/head", { pageTitle: "Speakers Page" }) %>
+<link rel="stylesheet" href="/styles/category.css">
+</head>
+
+<body>
+  <%- include("../../shared/includes/header") %>
+  <main>
+    <div class="category-heading">
+      <h1>Speakers</h1>
+    </div>
+    <section class="container">
+      <div class="products-wrapper">
+        <ul class="product-list">
+          <% for (const product of products) { %>
+          <li class="product-item">
+            <article>
+              <div class="product-wrapper">
+                <div class="col">
+                  <div class="product-image">
+                    <img src="<%= product.image.desktop %>" alt="">
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="product-info">
+                    <% if (product.new) { %>
+                      <p class="overline">NEW PRODUCT</p>
+                    <% } else { null } %>
+                    <h2><%= product.name %></h2>
+                    <p class="product-desc"><%= product.description %></p>
+                    <a href="/" class="btn-1">See Product</a>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </li>
+          <% } %>
+        </ul>
+      </div>
+    </section>
+    <section class="products-categories">
+      <div class="container">
+        <%- include("../../shared/layouts/products-categories") %>
+      </div>
+    </section>
+  </main>
+  <%- include("../../shared/includes/footer") %>
