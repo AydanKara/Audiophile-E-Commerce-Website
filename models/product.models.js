@@ -1,3 +1,4 @@
+const mongodb = require("mongodb");
 const db = require("../data/database");
 
 async function findCategoryHeadphones() {
@@ -60,10 +61,30 @@ async function findCategorySpeakers() {
   return products;
 }
 
+async function findById(productId) {
+  let prodId;
+  try {
+    prodId = new mongodb.ObjectId(productId);
+  } catch (error) {
+    throw error;
+  }
+  const product = await db
+    .getDb()
+    .collection("products")
+    .findOne({ _id: prodId })
+  console.log(product);
+  if (!product) {
+    const error = new Error("Couldn't find product");
+    throw error;
+  }
+  return product;
+}
+
 module.exports = {
   findCategoryEarphones,
   findCategoryHeadphones,
   findCategorySpeakers,
+  findById,
 };
 
 /* class Product {

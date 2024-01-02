@@ -1,17 +1,13 @@
-<%- include("../../shared/includes/head", { pageTitle: "Speakers Page" }) %>
+<%- include("../../shared/includes/head", { pageTitle: "Details Page" }) %>
 <link rel="stylesheet" href="/styles/category.css">
 </head>
 
 <body>
   <%- include("../../shared/includes/header") %>
   <main>
-    <div class="category-heading">
-      <h1>Speakers</h1>
-    </div>
     <section class="container">
       <div class="products-wrapper">
         <ul class="product-list">
-          <% for (const product of products) { %>
           <li class="product-item">
             <article>
               <div class="product-wrapper">
@@ -27,13 +23,12 @@
                     <% } else { null } %>
                     <h2><%= product.name %></h2>
                     <p class="product-desc"><%= product.description %></p>
-                    <a href="/products/<%= product._id %>" class="btn-1">See Product</a>
+                    <a href="/" class="btn-1">Add to cart</a>
                   </div>
                 </div>
               </div>
             </article>
           </li>
-          <% } %>
         </ul>
       </div>
     </section>
