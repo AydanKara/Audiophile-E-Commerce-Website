@@ -157,6 +157,16 @@ button {
     gap: 1.3rem;
 }
 
+.btn-alt {
+    background-color: var(--color-black);
+    color: var(--color-white);
+    transition: .3s ease-in-out background-color;
+}
+
+.btn-alt:hover {
+    background-color: #4C4C4C;
+}
+
 .alert {
     width: fit-content;
     border-radius: var(--border-radius-8);
@@ -177,7 +187,7 @@ button {
 
 @media (max-width: 1280px) {
     .container {
-        max-width: 86%;
+        max-width: 89%;
     }
 }
 
