@@ -12,6 +12,8 @@
     background-color: var(--color-gray-300);
     border-radius: var(--border-radius-8);
     flex-basis: 31.53%;
+    cursor: pointer;
+    transition: .3s ease-in-out color;
 }
 
 .category-img-wrapper {
@@ -31,5 +33,15 @@
 .category-title {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 1.3rem;
+}
+
+.category-title a {
+    opacity: .5;
+}
+
+.category-cart:hover .category-title a {
+
+    color: var(--color-orange);
+    opacity: 1;
 }

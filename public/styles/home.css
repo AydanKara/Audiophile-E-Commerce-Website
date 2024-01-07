@@ -2,7 +2,7 @@
     width: 100%;
     height: 63.2rem;
     background: url(/home/desktop/image-hero2.png) #0f0f0f no-repeat;
-    background-position: 86% -9.7rem;
+    background-position: 85% -9.7rem;
     background-size: 70.8rem 88.6rem;
 }
 
@@ -10,8 +10,8 @@
     max-width: 39.8rem;
     display: flex;
     flex-direction: column;
-    gap: 2.4rem;
-    padding: 12.8rem 0 15.8rem 0;
+    gap: 2.3rem;
+    padding: 12.6rem 0 0 0;
 }
 
 #hero-overline {
@@ -83,7 +83,12 @@
 }
 
 #product-1-heading {
-    color: var(--color-white);
+    color: #FFF;
+    font-size: 5.6rem;
+    font-weight: 700;
+    line-height: 5.8rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
 }
 
 #product-1-desc {
@@ -110,7 +115,7 @@
     gap: 3.2rem;
     height: 100%;
     width: fit-content;
-    padding-left: 12.6rem;
+    padding-left: 9.5rem;
 }
 
 #product-3 {
@@ -149,6 +154,7 @@
     justify-content: space-between;
     gap: 3rem;
 }
+
 .shop-info-col {
     width: 54rem;
     height: 100%;
@@ -157,6 +163,7 @@
     flex-direction: column;
     justify-content: center;
 }
+
 #shop-info-content {
     max-width: 44.5rem;
     display: flex;
@@ -164,12 +171,14 @@
     gap: 32px;
 }
 
-#shop-info-content h2>span{
+#shop-info-content h2>span {
     color: var(--color-orange);
 }
-#shop-info-content p{
+
+#shop-info-content p {
     opacity: .5;
 }
+
 .shop-info-col-bg {
     background: url(../../shared/desktop/image-best-gear.jpg) no-repeat;
     background-size: cover;
@@ -182,6 +191,7 @@
     #product-2 {
         background: url(../../home/tablet/image-speaker-zx7.jpg) no-repeat right;
     }
+
     #product-2-content {
         padding-left: 6.2rem;
     }
