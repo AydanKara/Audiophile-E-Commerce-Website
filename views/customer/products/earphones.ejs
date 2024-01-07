@@ -23,7 +23,7 @@
                 <div class="col-2">
                   <div class="product-info">
                     <% if (product.new) { %>
-                      <p class="overline">NEW PRODUCT</p>
+                    <p class="overline">NEW PRODUCT</p>
                     <% } else { null } %>
                     <h2><%= product.name %></h2>
                     <p class="product-desc"><%= product.description %></p>
@@ -42,5 +42,6 @@
         <%- include("../../shared/layouts/products-categories") %>
       </div>
     </section>
+    <%- include("../../shared/layouts/shop-info") %>
   </main>
   <%- include("../../shared/includes/footer") %>

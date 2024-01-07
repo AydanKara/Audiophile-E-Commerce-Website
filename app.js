@@ -33,7 +33,7 @@ api.use(checkAuthStatusMiddleware);
 api.use(baseRoutes);
 api.use(authRoutes);
 api.use(productsRoutes);
-api.use("/admin", adminRoutes)
+api.use("/admin", adminRoutes);
 
 api.use(errorHandlerMiddleware);
 

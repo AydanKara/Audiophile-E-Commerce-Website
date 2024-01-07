@@ -1,5 +1,6 @@
 <%- include("../../shared/includes/head", { pageTitle: "Details Page" }) %>
-<link rel="stylesheet" href="/styles/category.css">
+<link rel="stylesheet" href="/styles/product-details.css">
+<script src="/scripts/go-back.js" defer></script>
 </head>
 
 <body>
@@ -7,35 +8,85 @@
   <main>
     <section class="container">
       <div class="products-wrapper">
-        <ul class="product-list">
-          <li class="product-item">
+        <button id="go-back" class="btn-back">Go Back</button>
+        <div class="product-list">
+          <div class="product-item">
             <article>
-              <div class="product-wrapper">
-                <div class="col-1">
+              <ul class="product-wrapper">
+                <li class="col-1">
                   <div class="product-image">
                     <img src="<%= product.image.desktop %>" alt="">
                   </div>
-                </div>
-                <div class="col-2">
+                </li>
+                <li class="col-2">
                   <div class="product-info">
                     <% if (product.new) { %>
-                      <p class="overline">NEW PRODUCT</p>
+                    <p class="overline">NEW PRODUCT</p>
                     <% } else { null } %>
                     <h2><%= product.name %></h2>
                     <p class="product-desc"><%= product.description %></p>
-                    <a href="/" class="btn-1">Add to cart</a>
+                    <h6>$ <%= product.price.toLocaleString("en") %></h6>
+                    <div id="product-action">
+                      <div id="product-quantity">
+                        <span id="minus">-</span>
+                        <span id="quantity">1</span>
+                        <span id="plus">+</span>
+                      </div>
+                      <a href="/" class="btn-1">Add to cart</a>
+                    </div>
                   </div>
-                </div>
-              </div>
+                </li>
+              </ul>
+              <ul id="product-details">
+                <li id="features">
+                  <h3>Features</h3>
+                  <p><%= product.features %></p>
+                </li>
+                <li id="in-the-box">
+                  <h3>In The Box</h3>
+                  <ul id="product-includes">
+                    <% for (const include of product.includes) { %>
+                    <li class="include-item"><span><%= include.quantity %>x</span>
+                      <p><%= include.item %></p>
+                    </li>
+                    <% } %>
+                  </ul>
+                </li>
+              </ul>
             </article>
-          </li>
+          </div>
+        </div>
+    </section>
+    <section class="container">
+      <ul id="product-gallery">
+        <li class="first"><img src="<%= product.gallery.first.desktop %>" alt="First image from gallery"></li>
+        <li class="second"><img src="<%= product.gallery.second.desktop %>" alt="Second image from gallery"></li>
+        <li class="third"><img src="<%= product.gallery.third.desktop %>" alt="Third image from gallery"></li>
+      </ul>
+    </section>
+
+    <section class="container">
+      <div class="product-others">
+        <h3>you may also like</h3>
+        <ul class="others-list">
+          <% for (const other of product.others) { %>
+            <li class="other-item">
+              <div class="other-img">
+                <img src="<%= other.image.desktop %>" alt="Product Image">
+              </div>
+              <h5><%= other.name %></h5>
+              <a href="/products/<%= product._id %>" class="btn-1">See Product</a>
+            </li>
+            <% } %>
         </ul>
       </div>
     </section>
+
     <section class="products-categories">
       <div class="container">
         <%- include("../../shared/layouts/products-categories") %>
       </div>
     </section>
+    <%- include("../../shared/layouts/shop-info") %>
   </main>
   <%- include("../../shared/includes/footer") %>

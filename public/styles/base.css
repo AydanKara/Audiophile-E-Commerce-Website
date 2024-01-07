@@ -167,6 +167,19 @@ button {
     background-color: #4C4C4C;
 }
 
+.btn-back {
+    color: #000;
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 2.5rem;
+    transition: .3s ease-in-out color;
+    opacity: .5;
+    text-transform: capitalize;
+}
+.btn-back:hover {
+    color: var(--color-orange);
+}
+
 .alert {
     width: fit-content;
     border-radius: var(--border-radius-8);
@@ -174,7 +187,7 @@ button {
     margin: 5rem auto 0 auto;
     padding: 2rem;
     text-align: center;
-    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
 }
 
 .alert h2 {
@@ -191,10 +204,6 @@ button {
     }
 }
 
-@media (max-width: 1024px) {
-    
-}
+@media (max-width: 1024px) {}
 
-@media (max-width: 768px) {
-    
-}
+@media (max-width: 768px) {}
