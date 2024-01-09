@@ -11,22 +11,21 @@ class Cart {
       quantity: 1,
       totalPrice: product.price,
     };
-
     for (let i = 0; i < this.items.length; i++) {
       const item = this.items[i];
       if (item.product.id === product.id) {
-        cartItem.quantity = cartItem.quantity + 1;
-        cartItem.totalPrice = cartItem.totalPrice + product.price;
+        cartItem.quantity = +item.quantity + 1;
+        cartItem.totalPrice = item.totalPrice + product.price;
         this.items[i] = cartItem;
 
         this.totalQuantity++;
         this.totalPrice += product.price;
         return;
       }
-      this.items.push(cartItem);
-      this.totalQuantity++;
-      this.totalPrice += product.price;
     }
+    this.items.push(cartItem);
+    this.totalQuantity++;
+    this.totalPrice += product.price;
   }
 }
 

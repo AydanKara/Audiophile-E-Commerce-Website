@@ -1,0 +1,28 @@
+<div class="cart-modal">
+  <div class="cart-modal-wrapper">
+    <div class="cart-header">
+      <h6>CART (<%= cart.totalQuantity %>)</h6>
+      <a href="/" class="remove-btn">Remove all</a>
+    </div>
+    <ul class="cart-list">
+      <% for (let i = 0; i < cart.items.length; i++) { %>
+      <li class="cart-item">
+        <img src="<%= cart.items[i].product.image.mobile %>" alt="Product image">
+        <div class="item-title">
+          <p><%= cart.items[i].product.title %></p>
+          <span class="item-price">$ <%= cart.items[i].product.price.toLocaleString("en") %></span>
+        </div>
+        <div id="product-quantity">
+          <span id="minus">-</span>
+          <span id="quantity"><%= cart.items[i].quantity %></span>
+          <span id="plus">+</span>
+        </div>
+      </li>
+      <% } %>
+      <div class="total">
+        <p>TOTAL</p>
+        <span class="total-price">$ <%= cart.totalPrice.toLocaleString("en") %></span>
+      </div>
+    </ul>
+  </div>
+</div>

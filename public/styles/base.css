@@ -225,7 +225,6 @@ button {
     font-size: 14px;
     background-color: #f0f0f0;
     border-radius: 100%;
-    visibility: hidden;
 }
 
 @media (max-width: 1280px) {

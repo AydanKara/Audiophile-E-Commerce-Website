@@ -14,11 +14,16 @@
           </ul>
         </nav>
       </div>
-      <% if (!locals.isAdmin) { %><a href="/cart/shoping-cart" id="cart"><img src="/shared/desktop/icon-cart.svg" alt="cart icon" /><span class="badge">0</span></a>
+      <% if (!locals.isAdmin) { %>
+      <a href="/cart/shoping-cart" id="cart">
+        <img src="/shared/desktop/icon-cart.svg" alt="cart icon" />
+        <span class="badge"><%= locals.cart.totalQuantity %></span>
+      </a>
       <% } %>
     </div>
   </div>
 </header>
+<%- include("../layouts/cart") %>
 <aside id="mobile-menu">
   <nav><%- include("nav-items") %></nav>
 </aside>
