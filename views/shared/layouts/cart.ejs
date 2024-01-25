@@ -8,14 +8,14 @@
       <% for (let i = 0; i < cart.items.length; i++) { %>
       <li class="cart-item">
         <img src="<%= cart.items[i].product.image.mobile %>" alt="Product image">
-        <div class="item-title">
-          <p><%= cart.items[i].product.title %></p>
-          <span class="item-price">$ <%= cart.items[i].product.price.toLocaleString("en") %></span>
+        <div class="item-heading">
+          <p class="item-title"><%= cart.items[i].product.title %></p>
+          <p class="item-price">$ <%= cart.items[i].product.price.toLocaleString("en") %></p>
         </div>
-        <div id="product-quantity">
-          <span id="minus">-</span>
-          <span id="quantity"><%= cart.items[i].quantity %></span>
-          <span id="plus">+</span>
+        <div class="product-quantity">
+          <span class="minus">-</span>
+          <span class="quantity"><%= cart.items[i].quantity %></span>
+          <span class="plus">+</span>
         </div>
       </li>
       <% } %>
@@ -23,6 +23,7 @@
         <p>TOTAL</p>
         <span class="total-price">$ <%= cart.totalPrice.toLocaleString("en") %></span>
       </div>
+      <a href="/" class="btn-1">Checkout</a>
     </ul>
   </div>
 </div>

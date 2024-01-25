@@ -4,7 +4,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    visibility: visible;
+    visibility: hidden;
     z-index: 999;
     opacity: 0;
     transition: .3s ease all;
@@ -19,4 +19,125 @@
     position: fixed;
     top: 0;
     left: 0;
+}
+
+.cart-modal-wrapper {
+    max-width: 37.7rem;
+    width: 100%;
+    border-radius: 8px;
+    background: #FFF;
+    z-index: 10;
+    position: fixed;
+    padding: 3.2rem;
+    top: 13rem;
+    right: 16.5rem;
+}
+
+.cart-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: .8rem;
+}
+
+.cart-header .remove-btn {
+    color: #000;
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 25px;
+    text-decoration-line: underline;
+    text-transform: inherit;
+    transition: .3s ease-in-out color;
+}
+
+.cart-header .remove-btn:hover {
+    color: var(--color-orange);
+}
+
+.cart-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.cart-list .cart-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin: 2.4rem 0;
+}
+
+.cart-item .item-heading .item-title {
+    color: #000;
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 25px;
+}
+
+.cart-item .item-price {
+    color: #000;
+    font-size: 1.4rem;
+    font-weight: 700;
+    line-height: 25px;
+    opacity: .5;
+}
+
+.cart-list .cart-item .product-quantity {
+    margin-left: auto;
+    width: 9.6rem;
+    height: 3.2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: .7rem 1.1rem;
+    background-color: #F1F1F1;
+}
+
+.product-quantity span {
+    color: #000;
+    font-size: 1.7rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.product-quantity .minus,
+.product-quantity .plus {
+    cursor: pointer;
+    transition: .3s ease-in-out color;
+}
+
+.product-quantity .minus:hover,
+.product-quantity .plus:hover {
+    color: var(--color-orange);
+}
+
+.cart-list .cart-item img {
+    width: 6.4rem;
+}
+
+.cart-list .total {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: .8rem 0 2.4rem 0;
+}
+
+.cart-list .total p {
+    opacity: .5;
+}
+
+.cart-list .total .total-price {
+    color: #000;
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+
+
+
+
+
+.cart-list a {
+    text-align: center;
+    width: 100%;
 }

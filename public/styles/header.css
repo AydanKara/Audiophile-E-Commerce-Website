@@ -1,6 +1,8 @@
 header {
+    position: relative;
     width: 100%;
     background-color: #0f0f0f;
+    z-index: 1000;
 }
 
 #header-wrapper {
